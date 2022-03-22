@@ -9,7 +9,9 @@
       href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/styles/app.css" />
+    <link rel="stylesheet" href="assets/styles/app.css" /> <!-- defer is used to start to download/loading the scripts asap -->
+    <script src="assets/scripts/vendor.js" defer></script> <!-- but the script is executed only after alla the html is parsed -->
+    <script src="assets/scripts/app.js" defer></script> <!-- we use async when out script don't interact with the webpage so that we can download asap and execute the scrip right after the download finished without waiting for the html to be parsed. The order of execution of scripts is not guaranteed with async (insted the order is guaranteed by defer)-->
   </head>
   <body>
     <header>
@@ -29,7 +31,5 @@
       <h2 id="current-calculation">0</h2>
       <h2>Result: <span id="current-result">0</span></h2>
     </section>
-    <script src="assets/scripts/vendor.js"></script>
-    <script src="assets/scripts/app.js"></script>
   </body>
 </html>
